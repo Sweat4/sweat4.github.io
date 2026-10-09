@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>Sweat4 Personal Training Saarbrücken</title>
 <meta name="description" content="Personal Training 1:1 in Saarbrücken mit dem Sweat4 Control System: Krafttraining und Ernährung gesteuert über die eigene App. Khosro Talee, 30 Jahre Erfahrung.">
-<meta name="theme-color" content="#183C50">
+<meta name="theme-color" content="#0b0b0b">
 <link rel="icon" href="icon-192.png">
 <link rel="apple-touch-icon" href="icon-180.png">
 </head>
@@ -13,26 +13,23 @@
 
 
 <style>
-/* Layout: espresso hero + sticky header, sand content bands, gold only on numbers, labels and actions */
+/* Layout: Schwarz & Gold als Grundton, Sand-Bänder für Ablauf, Diagnostik und Über mich; Gold nur für Zahlen, Labels und Aktionen */
 :root{
-  --bg:#EDE4D3; --surface:#FAF6EE; --surface-2:#F3ECDF; --line:#DACDB4; --line-2:#C6B699;
-  --text:#12303F; --text-2:#2D4A59; --muted:#5A707C;
-  --gold:#86652F; --gold-fill:#BE9B5C; --gold-ink:#12303F; --gold-soft:rgba(190,155,92,.16);
-  --espresso:#183C50; --espresso-2:#21495F; --on-esp:#F3ECE1; --on-esp-2:#C5D2D8; --gold-on-esp:#C7A46A;
+  --bg:#0B0B0B; --surface:#151514; --surface-2:#1B1A19; --line:#2B2926; --line-2:#3C3833;
+  --text:#F2EFE9; --text-2:#D3CDC3; --muted:#A09A90;
+  --gold:#C7A46A; --gold-fill:#BE9B5C; --gold-ink:#111111; --gold-soft:rgba(199,164,106,.12);
+  --espresso:#0B0B0B; --espresso-2:#171615; --on-esp:#F2EFE9; --on-esp-2:#BFB9AF; --gold-on-esp:#C7A46A;
+  --sand-bg:#E8DCC6; --sand-surface:#F6F0E4; --sand-surface-2:#EFE6D4; --sand-line:#D4C5A9; --sand-line-2:#BFAE8E;
+  --sand-text:#141414; --sand-text-2:#383633; --sand-muted:#625C52; --sand-gold:#7E5F2C;
   --display:"Avenir Next Condensed","Barlow Condensed","Arial Narrow","Roboto Condensed",sans-serif-condensed,sans-serif;
   --body:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif;
   --wrap:1120px; --r:14px;
+  color-scheme:dark;
 }
-@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){
-  --bg:#0E2230; --surface:#142D3C; --surface-2:#183446; --line:#24465A; --line-2:#2F5870;
-  --text:#F3ECE1; --text-2:#D3DCE0; --muted:#93A7B1;
-  --gold:#C7A46A; --gold-fill:#C7A46A; --gold-soft:rgba(199,164,106,.14);
-  --espresso:#0F2533; --espresso-2:#163142; color-scheme:dark}}
-:root[data-theme="dark"]{
-  --bg:#0E2230; --surface:#142D3C; --surface-2:#183446; --line:#24465A; --line-2:#2F5870;
-  --text:#F3ECE1; --text-2:#D3DCE0; --muted:#93A7B1;
-  --gold:#C7A46A; --gold-fill:#C7A46A; --gold-soft:rgba(199,164,106,.14);
-  --espresso:#0F2533; --espresso-2:#163142; color-scheme:dark}
+/* Sand-Bänder: gleiche Bausteine, helle Werte */
+section.alt{--bg:var(--sand-bg); --surface:var(--sand-surface); --surface-2:var(--sand-surface-2); --line:var(--sand-line); --line-2:var(--sand-line-2);
+  --text:var(--sand-text); --text-2:var(--sand-text-2); --muted:var(--sand-muted); --gold:var(--sand-gold); --gold-soft:rgba(190,155,92,.22);
+  background:var(--bg); color:var(--text); color-scheme:light}
 
 *{box-sizing:border-box}
 html{scroll-behavior:smooth}
@@ -54,6 +51,7 @@ p{margin:0}
 .btn:hover{transform:translateY(-1px)}
 .btn-gold{background:var(--gold-fill);color:var(--gold-ink)}
 .btn-gold:hover{background:#CDAD70}
+.toast{background:var(--gold-fill)!important;color:#111!important}
 .btn-ghost{border-color:rgba(243,236,225,.35);color:var(--on-esp)}
 .btn-ghost:hover{border-color:var(--gold-on-esp)}
 .btn-line{border-color:var(--line-2);color:var(--text);background:transparent}
@@ -71,7 +69,7 @@ p{margin:0}
 @media (max-width:860px){.top nav{display:none}.top .btn{margin-left:auto}}
 
 /* hero */
-.hero{background:var(--espresso);color:var(--on-esp);padding-block:64px 72px;position:relative;overflow:hidden}
+.hero{background:var(--espresso);border-bottom:1px solid var(--line);color:var(--on-esp);padding-block:64px 72px;position:relative;overflow:hidden}
 .hero::after{content:"";position:absolute;inset:auto -10% -40% 40%;height:80%;background:radial-gradient(closest-side,rgba(199,164,106,.16),transparent);pointer-events:none}
 .hero .wrap{display:grid;grid-template-columns:1.15fr .85fr;gap:48px;align-items:center;position:relative;z-index:1}
 .hero .eyebrow{color:var(--gold-on-esp)}
@@ -195,7 +193,7 @@ td.v small{font:500 .78rem var(--body);color:var(--muted);margin-left:3px}
 @media (max-width:460px){.myth div{grid-template-columns:1fr;gap:4px}}
 
 /* online teaser */
-.teaser{background:var(--espresso);color:var(--on-esp);border-radius:22px;padding:40px;display:grid;grid-template-columns:1.4fr 1fr;gap:28px;align-items:center}
+.teaser{background:linear-gradient(135deg,#1A1816,#0F0F0E);border:1px solid rgba(199,164,106,.35);color:var(--on-esp);border-radius:22px;padding:40px;display:grid;grid-template-columns:1.4fr 1fr;gap:28px;align-items:center}
 .teaser .eyebrow{color:var(--gold-on-esp)}
 .teaser h2{margin-top:12px}
 .teaser p{color:var(--on-esp-2);margin-top:14px;max-width:56ch}
@@ -214,7 +212,7 @@ td.v small{font:500 .78rem var(--body);color:var(--muted);margin-left:3px}
 @media (max-width:800px){.contact{grid-template-columns:1fr}}
 
 /* footer + legal */
-footer{background:var(--espresso);color:var(--on-esp-2);padding-block:40px;margin-top:84px}
+footer{background:var(--espresso);border-top:1px solid var(--line);color:var(--on-esp-2);padding-block:40px;margin-top:84px}
 footer .wrap{display:flex;flex-wrap:wrap;gap:18px 28px;align-items:center;justify-content:space-between}
 footer svg{height:22px;width:auto;display:block}
 footer nav{display:flex;flex-wrap:wrap;gap:18px}
