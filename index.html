@@ -51,6 +51,16 @@ p{margin:0}
 .btn:hover{transform:translateY(-1px)}
 .btn-gold{background:var(--gold-fill);color:var(--gold-ink)}
 .btn-gold:hover{background:#CDAD70}
+.top .login{color:var(--on-esp);text-decoration:none;font-size:.88rem;font-weight:700;letter-spacing:.03em;border:1px solid rgba(199,164,106,.45);border-radius:999px;padding:9px 14px;white-space:nowrap}
+.top .login:hover{border-color:var(--gold-on-esp);color:var(--gold-on-esp)}
+@media (max-width:860px){.top .login{margin-left:auto}.top .login+.btn{margin-left:0}}
+@media (max-width:420px){.top .btn{display:none}}
+.login-steps{list-style:none;padding:0;margin:8px 0 0;display:grid;gap:12px;counter-reset:l}
+.login-steps li{counter-increment:l;display:grid;grid-template-columns:30px 1fr;column-gap:12px}
+.login-steps li::before{content:counter(l);grid-row:span 2;width:30px;height:30px;border-radius:50%;display:grid;place-items:center;background:var(--gold-soft);color:var(--gold);font:700 .95rem/1 var(--display)}
+.login-steps b{font-size:.98rem}
+.login-steps span{color:var(--text-2);font-size:.9rem}
+.ctas-row{display:flex;flex-wrap:wrap;gap:10px;margin-top:10px}
 .toast{background:var(--gold-fill)!important;color:#111!important}
 .btn-ghost{border-color:rgba(243,236,225,.35);color:var(--on-esp)}
 .btn-ghost:hover{border-color:var(--gold-on-esp)}
@@ -250,6 +260,7 @@ footer a:hover,footer button:hover{color:var(--on-esp)}
       <a href="#ueber-mich">Über mich</a>
       <a href="#kontakt">Kontakt</a>
     </nav>
+    <a class="login" href="https://sweat4.github.io/sweat4/" target="_blank" rel="noopener">Kunden-Login</a>
     <a class="btn btn-gold" href="#kontakt">Erstgespräch</a>
   </div>
 </header>
@@ -442,6 +453,15 @@ footer a:hover,footer button:hover{color:var(--on-esp)}
       <p class="eyebrow">Sweat4 App</p>
       <h2>Dein Plan in der Hosentasche</h2>
       <p class="lead">Als Kundin oder Kunde bekommst du Zugang zur Sweat4 App. Dort findest du deinen Trainingsplan, deine Ernährung und deinen Fortschritt. Deine Daten bleiben verschlüsselt auf deinem Handy.</p>
+      <ol class="login-steps">
+        <li><b>Zugang erhalten</b><span>Nach dem Start bekommst du von mir eine persönliche Plan-Datei und deinen Zugangscode.</span></li>
+        <li><b>App öffnen</b><span>Tippe auf „Zugang einrichten“, wähle die Datei und gib deinen Code ein.</span></li>
+        <li><b>Auf den Home-Bildschirm</b><span>Teilen → „Zum Home-Bildschirm“. Danach öffnest du die App wie jede andere.</span></li>
+      </ol>
+      <div class="ctas-row">
+        <a class="btn btn-gold" href="https://sweat4.github.io/sweat4/#/kunde-setup" target="_blank" rel="noopener">Zugang einrichten</a>
+        <a class="btn btn-line" href="https://sweat4.github.io/sweat4/" target="_blank" rel="noopener">App öffnen</a>
+      </div>
     </div>
     <div class="feat-list">
       <div><b>Trainingsplan</b><span>Übungen, Sätze, Wiederholungen und Pausen-Timer</span></div>
