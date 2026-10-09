@@ -1,0 +1,576 @@
+<!doctype html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Sweat4 Personal Training Saarbrücken</title>
+<meta name="description" content="Personal Training 1:1 in Saarbrücken mit dem Sweat4 Control System: Krafttraining und Ernährung gesteuert über die eigene App. Khosro Talee, 30 Jahre Erfahrung.">
+<meta name="theme-color" content="#2E2722">
+<link rel="icon" href="icon-192.png">
+<link rel="apple-touch-icon" href="icon-180.png">
+</head>
+<body>
+
+
+<style>
+/* Layout: espresso hero + sticky header, sand content bands, gold only on numbers, labels and actions */
+:root{
+  --bg:#F1EBE1; --surface:#FBF8F3; --surface-2:#F4EEE5; --line:#DDD2C2; --line-2:#C9BBA6;
+  --text:#2E2722; --text-2:#4A4038; --muted:#76685A;
+  --gold:#8A6A3A; --gold-fill:#BE9B5C; --gold-ink:#2E2722; --gold-soft:rgba(190,155,92,.16);
+  --espresso:#2E2722; --espresso-2:#3A312A; --on-esp:#F3ECE1; --on-esp-2:#CDBFAD; --gold-on-esp:#C7A46A;
+  --display:"Avenir Next Condensed","Barlow Condensed","Arial Narrow","Roboto Condensed",sans-serif-condensed,sans-serif;
+  --body:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif;
+  --wrap:1120px; --r:14px;
+}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){
+  --bg:#0E0C0A; --surface:#17140F; --surface-2:#1F1A14; --line:#2E271F; --line-2:#3D3428;
+  --text:#F3ECE1; --text-2:#D9CFC1; --muted:#A39684;
+  --gold:#C7A46A; --gold-fill:#C7A46A; --gold-soft:rgba(199,164,106,.14);
+  --espresso:#16120E; --espresso-2:#211B15; color-scheme:dark}}
+:root[data-theme="dark"]{
+  --bg:#0E0C0A; --surface:#17140F; --surface-2:#1F1A14; --line:#2E271F; --line-2:#3D3428;
+  --text:#F3ECE1; --text-2:#D9CFC1; --muted:#A39684;
+  --gold:#C7A46A; --gold-fill:#C7A46A; --gold-soft:rgba(199,164,106,.14);
+  --espresso:#16120E; --espresso-2:#211B15; color-scheme:dark}
+
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+body{margin:0;background:var(--bg);color:var(--text);font:16px/1.6 var(--body);-webkit-font-smoothing:antialiased}
+a{color:inherit}
+.wrap{max-width:var(--wrap);margin:0 auto;padding-inline:20px}
+h1,h2,h3{font-family:var(--display);font-weight:700;text-transform:uppercase;letter-spacing:.01em;line-height:1.02;margin:0;text-wrap:balance}
+h2{font-size:clamp(2rem,5vw,3.1rem)}
+h3{font-size:1.45rem;letter-spacing:.02em}
+p{margin:0}
+.eyebrow{font:600 .78rem/1.2 var(--body);letter-spacing:.22em;text-transform:uppercase;color:var(--gold)}
+.lead{font-size:1.08rem;color:var(--text-2);max-width:60ch}
+.num{font-family:var(--display);font-weight:700;font-variant-numeric:tabular-nums;color:var(--gold)}
+:focus-visible{outline:2px solid var(--gold-fill);outline-offset:3px;border-radius:6px}
+
+/* buttons */
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;min-height:48px;padding:0 22px;border-radius:999px;font:700 .95rem/1 var(--body);letter-spacing:.04em;text-decoration:none;border:1px solid transparent;cursor:pointer;transition:transform .15s,background .15s}
+.btn:hover{transform:translateY(-1px)}
+.btn-gold{background:var(--gold-fill);color:var(--gold-ink)}
+.btn-gold:hover{background:#CDAD70}
+.btn-ghost{border-color:rgba(243,236,225,.35);color:var(--on-esp)}
+.btn-ghost:hover{border-color:var(--gold-on-esp)}
+.btn-line{border-color:var(--line-2);color:var(--text);background:transparent}
+.btn-line:hover{border-color:var(--gold)}
+
+/* header */
+.top{position:sticky;top:env(safe-area-inset-top,0px);z-index:20;background:var(--espresso);border-bottom:1px solid rgba(199,164,106,.18)}
+.top .wrap{display:flex;align-items:center;gap:20px;min-height:64px}
+.top .brand{display:flex;align-items:center;text-decoration:none}
+.top .brand svg{height:26px;width:auto;display:block}
+.top nav{display:flex;gap:22px;margin-left:auto}
+.top nav a{color:var(--on-esp-2);text-decoration:none;font-size:.9rem;font-weight:600;letter-spacing:.03em}
+.top nav a:hover{color:var(--on-esp)}
+.top .btn{min-height:40px;padding:0 16px;font-size:.85rem}
+@media (max-width:860px){.top nav{display:none}.top .btn{margin-left:auto}}
+
+/* hero */
+.hero{background:var(--espresso);color:var(--on-esp);padding-block:64px 72px;position:relative;overflow:hidden}
+.hero::after{content:"";position:absolute;inset:auto -10% -40% 40%;height:80%;background:radial-gradient(closest-side,rgba(199,164,106,.16),transparent);pointer-events:none}
+.hero .wrap{display:grid;grid-template-columns:1.15fr .85fr;gap:48px;align-items:center;position:relative;z-index:1}
+.hero .eyebrow{color:var(--gold-on-esp)}
+.hero h1{font-size:clamp(2.9rem,8vw,5.6rem);margin-top:18px}
+.hero h1 span{color:var(--gold-on-esp);display:block}
+.hero .lead{color:var(--on-esp-2);margin-top:22px}
+.hero .ctas{display:flex;flex-wrap:wrap;gap:12px;margin-top:30px}
+.facts{display:grid;grid-template-columns:repeat(4,1fr);gap:18px;margin-top:44px;padding-top:24px;border-top:1px solid rgba(243,236,225,.14)}
+.facts b{display:block;font:700 2rem/1 var(--display);color:var(--gold-on-esp);font-variant-numeric:tabular-nums}
+.facts span{display:block;font-size:.82rem;color:var(--on-esp-2);margin-top:6px;line-height:1.35}
+@media (max-width:900px){.hero .wrap{grid-template-columns:1fr}.facts{grid-template-columns:repeat(2,1fr)}}
+
+/* app panel in hero */
+.panel{background:var(--espresso-2);border:1px solid rgba(199,164,106,.25);border-radius:22px;padding:22px;box-shadow:0 30px 60px rgba(0,0,0,.35);min-width:0}
+.panel-h{display:flex;justify-content:space-between;align-items:baseline;gap:10px}
+.panel-h small{white-space:nowrap;font-size:.72rem;letter-spacing:.16em;text-transform:uppercase;color:var(--on-esp-2)}
+.panel-h strong{font:700 1.3rem/1.1 var(--display);text-transform:uppercase;letter-spacing:.03em}
+.phases{display:grid;grid-template-columns:repeat(3,1fr);gap:6px;margin-top:16px}
+.phases i{font-style:normal;text-align:center;font-size:.72rem;font-weight:700;letter-spacing:.08em;padding:7px 0;border-radius:8px;background:rgba(243,236,225,.06);color:var(--on-esp-2)}
+.phases i.on{background:var(--gold-on-esp);color:#2E2722}
+.macros{display:grid;grid-template-columns:repeat(2,1fr);gap:10px;margin-top:14px}
+.macro{background:rgba(243,236,225,.05);border-radius:12px;padding:12px 14px}
+.macro small{display:block;font-size:.72rem;color:var(--on-esp-2);letter-spacing:.06em}
+.macro b{font:700 1.7rem/1.1 var(--display);color:var(--on-esp);font-variant-numeric:tabular-nums}
+.macro em{font-style:normal;font-size:.78rem;color:var(--gold-on-esp);margin-left:4px}
+.bar{height:6px;border-radius:6px;background:rgba(243,236,225,.08);margin-top:8px;overflow:hidden}
+.bar i{display:block;height:100%;background:var(--gold-on-esp);border-radius:6px}
+.panel-f{margin-top:14px;font-size:.78rem;color:var(--on-esp-2);display:flex;justify-content:space-between;gap:10px;flex-wrap:wrap}
+
+/* sections */
+section.band{padding-block:84px;scroll-margin-top:64px}
+section.alt{background:var(--surface-2);border-block:1px solid var(--line)}
+.sec-h{display:grid;gap:14px;margin-bottom:40px;max-width:760px}
+
+/* system */
+.sys{display:grid;grid-template-columns:1fr 1fr;gap:20px}
+.sys-card{background:var(--surface);border:1px solid var(--line);border-radius:var(--r);padding:30px;display:flex;flex-direction:column;gap:16px;min-width:0}
+.sys-card .tag{font:700 .72rem/1 var(--body);letter-spacing:.18em;text-transform:uppercase;color:var(--muted)}
+.sys-card ul{list-style:none;padding:0;margin:0;display:grid;gap:10px}
+.sys-card li{display:grid;grid-template-columns:18px 1fr;gap:10px;color:var(--text-2)}
+.sys-card li::before{content:"";width:8px;height:8px;margin-top:9px;border-radius:2px;background:var(--gold-fill);transform:rotate(45deg)}
+.sys-card blockquote{margin:auto 0 0;padding-top:16px;border-top:1px solid var(--line);font:700 1.25rem/1.2 var(--display);text-transform:uppercase;letter-spacing:.02em;color:var(--gold)}
+@media (max-width:800px){.sys{grid-template-columns:1fr}}
+
+.why{display:grid;grid-template-columns:repeat(3,1fr);gap:0;margin-top:22px;border:1px solid var(--line);border-radius:var(--r);overflow:hidden;background:var(--surface)}
+.why div{padding:22px 24px;border-right:1px solid var(--line);min-width:0}
+.why div:last-child{border-right:0;background:var(--gold-soft)}
+.why small{display:block;font-size:.78rem;color:var(--muted);letter-spacing:.04em}
+.why b{display:block;font:700 1.35rem/1.15 var(--display);text-transform:uppercase;margin-top:6px}
+.why div:last-child b{color:var(--gold)}
+@media (max-width:800px){.why{grid-template-columns:1fr}.why div{border-right:0;border-bottom:1px solid var(--line)}.why div:last-child{border-bottom:0}}
+
+/* phase table */
+.tbl-wrap{overflow-x:auto;margin-top:22px;border:1px solid var(--line);border-radius:var(--r);background:var(--surface)}
+table{border-collapse:collapse;width:100%;min-width:520px;font-variant-numeric:tabular-nums}
+th,td{padding:14px 18px;text-align:left;border-bottom:1px solid var(--line)}
+tr:last-child td{border-bottom:0}
+th{font:600 .74rem/1.2 var(--body);letter-spacing:.14em;text-transform:uppercase;color:var(--muted);background:var(--surface-2)}
+td.v{font:700 1.2rem/1 var(--display);color:var(--text)}
+td.v small{font:500 .78rem var(--body);color:var(--muted);margin-left:3px}
+.note{font-size:.85rem;color:var(--muted);margin-top:12px;max-width:70ch}
+
+/* steps */
+.steps{list-style:none;padding:0;margin:0;display:grid;grid-template-columns:repeat(4,1fr);gap:20px;counter-reset:s}
+.steps li{counter-increment:s;padding-top:18px;border-top:2px solid var(--line-2);min-width:0}
+.steps li::before{content:counter(s,decimal-leading-zero);display:block;font:700 1rem/1 var(--display);color:var(--gold);letter-spacing:.08em;margin-bottom:12px}
+.steps h3{font-size:1.25rem}
+.steps p{color:var(--text-2);margin-top:8px;font-size:.95rem}
+@media (max-width:900px){.steps{grid-template-columns:1fr 1fr}}
+@media (max-width:520px){.steps{grid-template-columns:1fr}}
+
+/* prices */
+.prices{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;align-items:stretch}
+.price{background:var(--surface);border:1px solid var(--line);border-radius:var(--r);padding:28px;display:flex;flex-direction:column;gap:14px;position:relative;min-width:0}
+.price.feat{border-color:var(--gold-fill);box-shadow:0 0 0 1px var(--gold-fill) inset}
+.price .badge{position:absolute;top:-12px;left:24px;background:var(--gold-fill);color:var(--gold-ink);font:700 .7rem/1 var(--body);letter-spacing:.14em;text-transform:uppercase;padding:6px 10px;border-radius:999px}
+.price h3{font-size:1.15rem;color:var(--muted);letter-spacing:.1em}
+.price .big{font:700 3.2rem/1 var(--display);font-variant-numeric:tabular-nums;color:var(--text)}
+.price .big small{font:600 1rem var(--body);color:var(--muted);margin-left:4px}
+.price .sum{color:var(--text-2);font-size:.95rem}
+.price .sum b{color:var(--gold)}
+.price ul{list-style:none;padding:14px 0 0;margin:0;border-top:1px solid var(--line);display:grid;gap:8px;font-size:.93rem;color:var(--text-2)}
+.price ul li{display:grid;grid-template-columns:16px 1fr;gap:8px}
+.price ul li::before{content:"✓";color:var(--gold);font-weight:700}
+.price .btn{margin-top:auto}
+@media (max-width:860px){.prices{grid-template-columns:1fr}}
+
+.sub-h{display:flex;flex-wrap:wrap;justify-content:space-between;align-items:end;gap:12px;margin:64px 0 22px}
+.sub-h h3{font-size:1.9rem}
+.sub-h p{color:var(--muted);font-size:.95rem;max-width:52ch}
+
+.rows{border:1px solid var(--line);border-radius:var(--r);background:var(--surface);overflow:hidden}
+.row{display:grid;grid-template-columns:1.2fr 2fr auto;gap:18px;align-items:center;padding:20px 24px;border-bottom:1px solid var(--line)}
+.row:last-child{border-bottom:0}
+.row.feat{background:var(--gold-soft)}
+.row h4{margin:0;font:700 1.3rem/1.1 var(--display);text-transform:uppercase;letter-spacing:.02em}
+.row h4 small{display:block;font:600 .74rem/1.4 var(--body);letter-spacing:.12em;color:var(--gold);margin-top:4px}
+.row p{color:var(--text-2);font-size:.95rem;min-width:0}
+.row .pr{font:700 1.8rem/1 var(--display);font-variant-numeric:tabular-nums;text-align:right;white-space:nowrap}
+@media (max-width:700px){.row{grid-template-columns:1fr auto}.row p{grid-column:1/-1;grid-row:2}}
+
+/* app */
+.app{display:grid;grid-template-columns:1fr 1fr;gap:40px;align-items:center}
+.feat-list{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+.feat-list div{background:var(--surface);border:1px solid var(--line);border-radius:12px;padding:16px 18px;min-width:0}
+.feat-list b{display:block;font:700 1.1rem/1.15 var(--display);text-transform:uppercase;letter-spacing:.02em}
+.feat-list span{display:block;font-size:.88rem;color:var(--text-2);margin-top:4px}
+@media (max-width:860px){.app{grid-template-columns:1fr}}
+@media (max-width:460px){.feat-list{grid-template-columns:1fr}}
+
+/* about */
+.about{display:grid;grid-template-columns:.9fr 1.1fr;gap:48px;align-items:start}
+.about .copy{display:grid;gap:16px;color:var(--text-2)}
+.myth{border:1px solid var(--line);border-radius:var(--r);background:var(--surface);overflow:hidden}
+.myth div{display:grid;grid-template-columns:1fr 1fr;gap:16px;padding:16px 20px;border-bottom:1px solid var(--line)}
+.myth div:last-child{border-bottom:0}
+.myth s{color:var(--muted);text-decoration-color:var(--gold-fill);text-decoration-thickness:2px}
+.myth span{color:var(--text);font-weight:600}
+.myth .hd{background:var(--surface-2);font:600 .72rem/1.2 var(--body);letter-spacing:.14em;text-transform:uppercase;color:var(--muted)}
+@media (max-width:860px){.about{grid-template-columns:1fr}}
+@media (max-width:460px){.myth div{grid-template-columns:1fr;gap:4px}}
+
+/* online teaser */
+.teaser{background:var(--espresso);color:var(--on-esp);border-radius:22px;padding:40px;display:grid;grid-template-columns:1.4fr 1fr;gap:28px;align-items:center}
+.teaser .eyebrow{color:var(--gold-on-esp)}
+.teaser h2{margin-top:12px}
+.teaser p{color:var(--on-esp-2);margin-top:14px;max-width:56ch}
+.teaser .btn{justify-self:end}
+@media (max-width:800px){.teaser{grid-template-columns:1fr;padding:28px}.teaser .btn{justify-self:start}}
+
+/* contact */
+.contact{display:grid;grid-template-columns:1fr 1fr;gap:40px}
+.ch{display:grid;gap:12px}
+.ch-item{display:flex;align-items:center;gap:14px;background:var(--surface);border:1px solid var(--line);border-radius:12px;padding:14px 16px;min-width:0}
+.ch-item div{min-width:0;flex:1}
+.ch-item small{display:block;font-size:.72rem;letter-spacing:.14em;text-transform:uppercase;color:var(--muted)}
+.ch-item a,.ch-item output{font-weight:700;font-size:1.05rem;text-decoration:none;word-break:break-word;user-select:all}
+.copy-b{background:none;border:1px solid var(--line-2);color:var(--text-2);border-radius:999px;font:600 .8rem var(--body);padding:8px 12px;cursor:pointer}
+.copy-b:hover{border-color:var(--gold)}
+@media (max-width:800px){.contact{grid-template-columns:1fr}}
+
+/* footer + legal */
+footer{background:var(--espresso);color:var(--on-esp-2);padding-block:40px;margin-top:84px}
+footer .wrap{display:flex;flex-wrap:wrap;gap:18px 28px;align-items:center;justify-content:space-between}
+footer svg{height:22px;width:auto;display:block}
+footer nav{display:flex;flex-wrap:wrap;gap:18px}
+footer a,footer button{color:var(--on-esp-2);font:600 .88rem var(--body);background:none;border:0;cursor:pointer;text-decoration:none;padding:4px 0}
+footer a:hover,footer button:hover{color:var(--on-esp)}
+.legal{background:var(--surface);border-top:1px solid var(--line)}
+.legal .wrap{padding-block:40px;display:grid;gap:14px;max-width:820px}
+.legal h2{font-size:2rem}
+.legal h3{font-size:1.15rem;margin-top:14px}
+.legal p,.legal li{color:var(--text-2);font-size:.95rem}
+.legal .close{justify-self:start}
+.philo{list-style:none;padding:0;margin:-12px 0 36px;display:grid;grid-template-columns:repeat(4,1fr);gap:12px}
+.philo li{border-left:2px solid var(--gold-fill);padding:4px 0 4px 12px;font-weight:600;color:var(--text-2);font-size:.93rem;min-width:0}
+@media (max-width:860px){.philo{grid-template-columns:1fr 1fr}}
+@media (max-width:460px){.philo{grid-template-columns:1fr}}
+.diag .sub{color:var(--gold);font-weight:600;font-size:.9rem;margin-top:-8px}
+.diag .dur{color:var(--muted);font-size:.9rem;margin-top:-6px}
+.dsteps{list-style:none;padding:14px 0 0;margin:0;border-top:1px solid var(--line);display:grid;gap:12px}
+.dsteps li{display:flex;justify-content:space-between;gap:12px;border-left:2px solid var(--line-2);padding-left:12px}
+.dsteps li div{min-width:0}
+.dsteps b{display:block;font-size:.95rem;color:var(--text)}
+.dsteps span{display:block;font-size:.84rem;color:var(--muted);line-height:1.4}
+.dsteps em{font-style:normal;font-size:.8rem;font-weight:700;color:var(--gold);white-space:nowrap;font-variant-numeric:tabular-nums}
+.diag .btn{margin-top:auto}
+.toast{position:fixed;left:50%;bottom:calc(20px + env(safe-area-inset-bottom,0px));transform:translateX(-50%);background:var(--text);color:var(--bg);padding:10px 16px;border-radius:999px;font-weight:600;font-size:.9rem;z-index:50}
+</style>
+
+<header class="top">
+  <div class="wrap">
+    <a class="brand" href="#start" aria-label="Sweat4 Startseite"><svg xmlns="http://www.w3.org/2000/svg" viewBox="10 -110 2310 840" class="logo-mark" focusable="false" role="img" aria-label="SWEAT4"><path fill="#BE9B5C" d="M316.0 714.0Q230.0 714.0 150.0 693.0Q70.0 672.0 21.0 637.0L86.0 491.0Q133.0 522.0 195.0 541.0Q257.0 560.0 317.0 560.0Q378.0 560.0 404.5 544.0Q431.0 528.0 431.0 503.0Q431.0 479.0 409.5 465.0Q388.0 451.0 352.5 442.0Q317.0 433.0 274.5 424.0Q232.0 415.0 189.5 401.5Q147.0 388.0 111.5 365.0Q76.0 342.0 54.5 305.0Q33.0 268.0 33.0 213.0Q33.0 151.0 67.5 99.5Q102.0 48.0 170.5 17.0Q239.0 -14.0 343.0 -14.0Q411.0 -14.0 478.0 1.5Q545.0 17.0 597.0 47.0L536.0 194.0Q486.0 167.0 437.0 153.5Q388.0 140.0 342.0 140.0Q280.0 140.0 254.5 158.5Q229.0 177.0 229.0 203.0Q229.0 226.0 250.5 239.0Q272.0 252.0 307.5 261.0Q343.0 270.0 385.5 279.0Q428.0 288.0 470.0 301.5Q512.0 315.0 547.5 337.5Q583.0 360.0 604.5 396.5Q626.0 433.0 626.0 488.0Q626.0 549.0 592.0 600.5Q558.0 652.0 489.0 683.0Q420.0 714.0 316.0 714.0Z M890.0 700.0 663.0 0.0H867.0L1008.0 447.0L1156.0 0.0H1338.0L1480.0 452.0L1626.0 0.0H1815.0L1588.0 700.0H1376.0L1242.0 274.0L1102.0 700.0Z"/><path fill="#BE9B5C" transform="translate(1529.2,-284.8) scale(2.713)" d="M212.5,70 L247,70 L170,224 L286.3,224 L286.3,254 L136.3,254 L136.3,224 Z M194.2,226 C194.4,223.6 194.0,217.1 195.4,212.0 C196.7,206.8 198.8,201.1 202.5,195.0 C206.1,188.8 212.0,181.6 217.5,175.0 C223.0,168.3 230.7,161.3 235.5,155.0 C240.3,148.6 243.7,141.8 246.3,137.0 C248.8,132.1 249.8,127.8 250.6,126.0 C251.0,128.0 253.0,133.5 253.0,138.0 C253.0,142.5 252.1,147.1 250.6,153.0 C249.0,158.8 246.8,166.3 243.6,173.0 C240.3,179.6 235.3,186.6 231.0,193.0 C226.6,199.3 220.5,205.5 217.4,211.0 C214.2,216.5 213.1,223.5 212.3,226.0 Z M229.0,226 C229.7,224.0 230.3,218.1 233.2,214.0 C236.0,209.8 242.3,205.5 246.0,201.0 C249.6,196.5 253.0,191.6 255.3,187.0 C257.6,182.3 259.0,175.3 259.8,173.0 C260.6,174.6 263.4,179.0 264.6,183.0 C265.8,187.0 267.3,192.1 267.0,197.0 C266.6,201.8 264.0,207.1 262.6,212.0 C261.1,216.8 259.0,223.6 258.3,226.0 Z M163.3,257.5 H274.3 Q277.3,257.5 277.3,260.5 V264.5 Q277.3,267.5 274.3,267.5 H163.3 Q160.3,267.5 160.3,264.5 V260.5 Q160.3,257.5 163.3,257.5 Z M202.0,271 H244.0 Q245.5,271 245.5,272.5 V351.0 Q245.5,352.5 244.0,352.5 H202.0 Q200.5,352.5 200.5,351.0 V272.5 Q200.5,271 202.0,271 Z M184.3,352.5 H261.3 Q264.3,352.5 264.3,355.5 V360 Q264.3,363 261.3,363 H184.3 Q181.3,363 181.3,360 V355.5 Q181.3,352.5 184.3,352.5 Z"/></svg></a>
+    <nav aria-label="Hauptnavigation">
+      <a href="#system">System</a>
+      <a href="#training">Personal Training</a>
+      <a href="#diagnostik">Diagnostik</a>
+      <a href="#ueber-mich">Über mich</a>
+      <a href="#kontakt">Kontakt</a>
+    </nav>
+    <a class="btn btn-gold" href="#kontakt">Erstgespräch</a>
+  </div>
+</header>
+
+<main id="start">
+<section class="hero">
+  <div class="wrap">
+    <div>
+      <p class="eyebrow">Personal Training 1:1 · Saarbrücken</p>
+      <h1>Training mit System. <span>Ergebnis mit Kontrolle.</span></h1>
+      <p class="lead">Ich bin Khosro Talee, Gründer von Sweat4. Im Sweat4 Control System greifen Krafttraining und Ernährung ineinander: ein fester Plan, klare Zahlen und meine eigene App, die beides für dich steuert.</p>
+      <div class="ctas">
+        <a class="btn btn-gold" href="#kontakt">Erstgespräch vereinbaren</a>
+        <a class="btn btn-ghost" href="#system">So funktioniert das System</a>
+      </div>
+      <div class="facts">
+        <div><b>30</b><span>Jahre Trainings&shy;erfahrung</span></div>
+        <div><b>12.000+</b><span>Stunden Personal Training</span></div>
+        <div><b>15+</b><span>Jahre Marke Sweat4</span></div>
+        <div><b>5+</b><span>selbst ausgebildete Trainer</span></div>
+      </div>
+    </div>
+    <aside class="panel" aria-label="Beispiel aus der Sweat4 App">
+      <div class="panel-h"><div><small>Beispiel · 80 kg</small><br><strong>Körperdefinition</strong></div><small>Woche 6 / 12</small></div>
+      <div class="phases" aria-hidden="true"><i>Phase 1</i><i class="on">Phase 2</i><i>Phase 3</i></div>
+      <div class="macros">
+        <div class="macro"><small>Protein</small><b>200</b><em>g · 2,5 g/kg</em><div class="bar"><i style="width:78%"></i></div></div>
+        <div class="macro"><small>Kohlenhydrate</small><b>200</b><em>g · 2,5 g/kg</em><div class="bar"><i style="width:64%"></i></div></div>
+        <div class="macro"><small>Fett</small><b>48</b><em>g · 0,6 g/kg</em><div class="bar"><i style="width:52%"></i></div></div>
+        <div class="macro"><small>Wasser</small><b>4,0</b><em>L · 50 ml/kg</em><div class="bar"><i style="width:70%"></i></div></div>
+      </div>
+      <div class="panel-f"><span>≈ 2.030 kcal pro Tag</span><span>Neu berechnet bei jedem Check</span></div>
+    </aside>
+  </div>
+</section>
+
+<section class="band" id="system">
+  <div class="wrap">
+    <div class="sec-h">
+      <p class="eyebrow">Das Sweat4 Control System</p>
+      <h2>Zwei Systeme. Ein Ziel.</h2>
+      <p class="lead">Training baut den Körper, die Ernährung entscheidet, wie viel davon sichtbar wird. Deshalb plane ich beides zusammen und passe es alle paar Wochen an deine Werte an.</p>
+    </div>
+    <div class="sys">
+      <article class="sys-card">
+        <span class="tag">Training</span>
+        <h3>Structural Performance Training</h3>
+        <ul>
+          <li>3er-Split mit festen Tagen, 60 bis 70 Minuten pro Einheit</li>
+          <li>Langhantel, Kurzhantel und Rack statt Gerätepark</li>
+          <li>Supersätze und Wiederholungs&shy;pyramiden für mehr Wirkung in weniger Zeit</li>
+          <li>Progressive Steigerung von Gewicht und Spannung, Woche für Woche dokumentiert</li>
+          <li>Gesteuerte Pausen, beim Muskelaufbau 2 Minuten mit Timer</li>
+        </ul>
+        <blockquote>Struktur entscheidet über Leistung.</blockquote>
+      </article>
+      <article class="sys-card">
+        <span class="tag">Ernährung</span>
+        <h3>Metabolic Control Engine</h3>
+        <ul>
+          <li>Grundumsatz und Tagesbedarf, berechnet mit deinem Aktivitätslevel</li>
+          <li>Makros in Gramm pro Kilo Körpergewicht, getrennt für Frauen und Männer</li>
+          <li>Drei Phasen in 12 Wochen, neu berechnet bei jedem Check</li>
+          <li>Mahlzeiten rund ums Training: 5 Mahlzeiten oder Intervallfasten 16:8 und 20:4</li>
+          <li>Wasserziel pro Tag nach Körpergewicht</li>
+        </ul>
+        <blockquote>Energie wird nicht reduziert. Sie wird programmiert.</blockquote>
+      </article>
+    </div>
+
+    <div class="why" aria-label="Warum Training allein nicht reicht">
+      <div><small>Training ohne Ernährungssteuerung</small><b>Ineffizient</b></div>
+      <div><small>Ernährung ohne Trainingsstruktur</small><b>Wirkungslos</b></div>
+      <div><small>Beides gesteuert</small><b>Kontrolle</b></div>
+    </div>
+
+    <div class="sub-h"><h3>So sieht Steuerung aus</h3><p>Körperdefinition &amp; Abnehmen, Männer. Werte pro Kilo Körpergewicht und Tag.</p></div>
+    <div class="tbl-wrap">
+      <table>
+        <thead><tr><th>Phase</th><th>Protein</th><th>Kohlenhydrate</th><th>Fett</th><th>Wasser</th></tr></thead>
+        <tbody>
+          <tr><td>Phase 1 · Woche 1–4</td><td class="v">2,2<small>g</small></td><td class="v">3,1<small>g</small></td><td class="v">0,8<small>g</small></td><td class="v">40<small>ml</small></td></tr>
+          <tr><td>Phase 2 · Woche 5–8</td><td class="v">2,5<small>g</small></td><td class="v">2,5<small>g</small></td><td class="v">0,6<small>g</small></td><td class="v">50<small>ml</small></td></tr>
+          <tr><td>Phase 3 · Woche 9–12</td><td class="v">2,8<small>g</small></td><td class="v">1,9<small>g</small></td><td class="v">0,4<small>g</small></td><td class="v">60<small>ml</small></td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p class="note">Für Frauen und für Muskelaufbau gelten eigene Werte. Deine Zahlen legen wir nach der Diagnostik fest.</p>
+  </div>
+</section>
+
+<section class="band alt" id="ablauf">
+  <div class="wrap">
+    <div class="sec-h">
+      <p class="eyebrow">Ablauf</p>
+      <h2>Vom ersten Gespräch zum Plan</h2>
+    </div>
+    <ol class="steps">
+      <li><h3>Erstgespräch</h3><p>Wir sprechen über dein Ziel, deinen Alltag und deine Vorgeschichte. Unverbindlich.</p></li>
+      <li><h3>Diagnostik</h3><p>Ich messe, wo du stehst. Das ist die Grundlage für jede Zahl in deinem Plan.</p></li>
+      <li><h3>Dein Plan</h3><p>Training und Ernährung landen in der Sweat4 App, abgestimmt auf dich.</p></li>
+      <li><h3>Training &amp; Checks</h3><p>Wir trainieren 1:1. Bei jedem Check passe ich Plan und Makros an.</p></li>
+    </ol>
+  </div>
+</section>
+
+<section class="band" id="training">
+  <div class="wrap">
+    <div class="sec-h">
+      <p class="eyebrow">Personal Training 1:1</p>
+      <h2>Dein Trainer. Dein Fokus.</h2>
+      <p class="lead">Personal Training bei Sweat4 heißt volle Aufmerksamkeit auf dich, deinen Körper und deine Entwicklung: strukturiert, präzise und individuell. Wie oft du trainierst, entscheidest du.</p>
+    </div>
+    <ul class="philo">
+      <li>Feste Termine statt Wartezeit an Geräten</li>
+      <li>Persönliche Betreuung in jeder Einheit</li>
+      <li>Trainingssystem statt Gerätepark</li>
+      <li>Klare Struktur statt „mach einfach irgendwas“</li>
+    </ul>
+    <div class="prices">
+      <article class="price">
+        <h3>4 Stunden / Monat</h3>
+        <div class="big">90 €<small>pro Stunde</small></div>
+        <p class="sum"><b>360 €</b> im Monat · 1× pro Woche</p>
+        <ul><li>Trainingsplan in der Sweat4 App</li><li>Ernährungsplan mit Makros</li><li>Check und Anpassung</li></ul>
+        <a class="btn btn-line" href="#kontakt">Anfragen</a>
+      </article>
+      <article class="price feat">
+        <span class="badge">Beliebt</span>
+        <h3>8 Stunden / Monat</h3>
+        <div class="big">80 €<small>pro Stunde</small></div>
+        <p class="sum"><b>640 €</b> im Monat · 2× pro Woche</p>
+        <ul><li>Trainingsplan in der Sweat4 App</li><li>Ernährungsplan mit Makros und Mahlzeiten</li><li>Check und Anpassung</li></ul>
+        <a class="btn btn-gold" href="#kontakt">Anfragen</a>
+      </article>
+      <article class="price">
+        <h3>12 Stunden / Monat</h3>
+        <div class="big">70 €<small>pro Stunde</small></div>
+        <p class="sum"><b>840 €</b> im Monat · 3× pro Woche</p>
+        <ul><li>Trainingsplan in der Sweat4 App</li><li>Ernährungsplan mit Makros und Mahlzeiten</li><li>Check und Anpassung</li></ul>
+        <a class="btn btn-line" href="#kontakt">Anfragen</a>
+      </article>
+    </div>
+
+    <div class="sub-h"><h3>Startpakete</h3><p>Zum Kennenlernen, ohne monatliche Bindung.</p></div>
+    <div class="rows">
+      <div class="row"><h4>Entry<small>3× Personal Training</small></h4><p>Drei Einheiten 1:1, Basis-Diagnostik und ein Sweat4 T-Shirt.</p><div class="pr num">279 €</div></div>
+      <div class="row"><h4>Build<small>6× Personal Training</small></h4><p>Sechs Einheiten 1:1 für einen sauberen Start in dein System.</p><div class="pr num">449 €</div></div>
+      <div class="row"><h4>Control<small>12× Personal Training</small></h4><p>Zwölf Einheiten 1:1, genug Zeit für sichtbare Veränderung.</p><div class="pr num">699 €</div></div>
+    </div>
+  </div>
+</section>
+
+<section class="band alt" id="diagnostik">
+  <div class="wrap">
+    <div class="sec-h">
+      <p class="eyebrow">Leistungsdiagnostik</p>
+      <h2>Kenne deinen Körper.</h2>
+      <p class="lead">Professionelle Leistungsdiagnostik für datenbasiertes Training. Sie zeigt, wo du heute stehst. Sie ist der Ausgangspunkt für deinen Plan und der Vergleichswert für jeden späteren Check.</p>
+    </div>
+    <div class="prices">
+      <article class="price diag">
+        <h3>Basis</h3>
+        <div class="big">79 €</div>
+        <p class="dur">ca. 60 Minuten</p>
+        <ol class="dsteps"><li><div><b>Vorbereitung</b><span>Termin &amp; Unterlagen</span></div><em>10 Min</em></li><li><div><b>Anamnese &amp; Fragebögen</b><span>Basisanamnese, Zieldefinition</span></div><em>10–15 Min</em></li><li><div><b>Datenerhebung</b><span>Basisdaten, Kraftscreening, Bewegungsscreens</span></div><em>20–25 Min</em></li><li><div><b>Analyse</b><span>Qualitative Auswertung &amp; Notizen</span></div><em>10 Min</em></li><li><div><b>Feedback</b><span>Mündliches Kurzfeedback</span></div><em>10 Min</em></li></ol>
+        <a class="btn btn-line" href="#kontakt">Termin anfragen</a>
+      </article>
+      <article class="price diag feat"><span class="badge">Empfohlen</span>
+        <h3>Advanced</h3><p class="sub">Ausführliche Analyse</p>
+        <div class="big">209 €</div>
+        <p class="dur">ca. 2,5–3 Stunden</p>
+        <ol class="dsteps"><li><div><b>Vorbereitung</b><span>Individuelle Testplanung, Dokumente</span></div><em>15 Min</em></li><li><div><b>Erweiterte Anamnese</b><span>Trainingsbelastung, Regeneration, Zielpriorisierung</span></div><em>20 Min</em></li><li><div><b>Datenerhebung</b><span>Komplette Basisdiagnostik, Kraftdiagnostik, Bewegungsanalyse, Ausdauerbelastung</span></div><em>75–90 Min</em></li><li><div><b>Analyse</b><span>Dateneingabe, Vergleich &amp; Priorisierung, Steuerung</span></div><em>30–45 Min</em></li><li><div><b>Ergebnis &amp; Feedback</b><span>Erklärung, Trainingsableitung, weiteres Vorgehen</span></div><em>20–30 Min</em></li></ol>
+        <a class="btn btn-gold" href="#kontakt">Termin anfragen</a>
+      </article>
+      <article class="price diag">
+        <h3>Pro / Longevity</h3><p class="sub">Leistung und Gesundheit auf lange Sicht</p>
+        <div class="big">499 €</div>
+        <p class="dur">ca. 4,5–5,5 Stunden</p>
+        <ol class="dsteps"><li><div><b>Vorbereitung</b><span>Ablaufplanung, externe Koordination</span></div><em>20–30 Min</em></li><li><div><b>Tiefenanamnese</b><span>Lebensstil, Langzeitziele</span></div><em>30–40 Min</em></li><li><div><b>Datenerhebung</b><span>Komplette Diagnostik aus Basis &amp; Advanced, High-End-Parameter</span></div><em>120–150 Min</em></li><li><div><b>Systemische Analyse</b><span>Gesamtbewertung, Langfrist- &amp; Risikoanalyse</span></div><em>60 Min</em></li><li><div><b>Premium-Feedback</b><span>Ausführliche Erklärung, Roadmap, Re-Test-Planung</span></div><em>30–45 Min</em></li></ol>
+        <a class="btn btn-line" href="#kontakt">Termin anfragen</a>
+      </article>
+    </div>
+  </div>
+</section>
+
+<section class="band" id="app">
+  <div class="wrap app">
+    <div class="sec-h" style="margin:0">
+      <p class="eyebrow">Sweat4 App</p>
+      <h2>Dein Plan in der Hosentasche</h2>
+      <p class="lead">Als Kundin oder Kunde bekommst du Zugang zur Sweat4 App. Dort findest du deinen Trainingsplan, deine Ernährung und deinen Fortschritt. Deine Daten bleiben verschlüsselt auf deinem Handy.</p>
+    </div>
+    <div class="feat-list">
+      <div><b>Trainingsplan</b><span>Übungen, Sätze, Wiederholungen und Pausen-Timer</span></div>
+      <div><b>Fortschritt</b><span>Gewichte werden gespeichert, die App schlägt die nächste Steigerung vor</span></div>
+      <div><b>Ernährung</b><span>Kalorien, Makros und Wasser für deine aktuelle Phase</span></div>
+      <div><b>Mahlzeiten</b><span>Baukasten mit Lebensmitteln, Mengen werden automatisch berechnet</span></div>
+    </div>
+  </div>
+</section>
+
+<section class="band alt" id="ueber-mich">
+  <div class="wrap about">
+    <div class="copy">
+      <p class="eyebrow">Über mich</p>
+      <h2>Khosro Talee</h2>
+      <p>Ich trainiere seit 30 Jahren und habe über 12.000 Stunden Personal Training gegeben. Die Marke Sweat4 gibt es seit mehr als 15 Jahren, und ich habe in dieser Zeit mehr als fünf Trainer selbst ausgebildet.</p>
+      <p>Mein Ansatz ist einfach: wenige, gute Übungen, saubere Technik, ein Plan mit Zahlen und eine Ernährung, die in den Alltag passt. Ohne Crash-Diät und ohne endlose Cardio-Einheiten.</p>
+      <p>Für Frauen heißt das: stark statt schmal. Krafttraining formt und definiert den Körper, in 3 Stunden pro Woche.</p>
+    </div>
+    <div class="myth" aria-label="Was ich anders sehe">
+      <div class="hd"><span>Weit verbreitet</span><span>Meine Erfahrung</span></div>
+      <div><s>Krafttraining macht Frauen breit.</s><span>Es formt, definiert und macht stark.</span></div>
+      <div><s>Cardio ist der Weg zum Abnehmen.</s><span>Krafttraining bringt mehr für Form und Fettabbau.</span></div>
+      <div><s>Mehr Training ist besser.</s><span>Regeneration entscheidet mit.</span></div>
+      <div><s>Maschinen sind besser für Muskeln.</s><span>Freie Gewichte trainieren die Körpermitte mit.</span></div>
+      <div><s>Training zählt mehr als Ernährung.</s><span>Ernährung macht 60–70 % des Erfolgs aus.</span></div>
+    </div>
+  </div>
+</section>
+
+<section class="band" style="padding-bottom:0">
+  <div class="wrap">
+    <div class="teaser">
+      <div>
+        <p class="eyebrow">Online-Coaching · bald</p>
+        <h2>Sweat4 Bestform 12</h2>
+        <p>12 Wochen Coaching für Frauen, die nicht in Saarbrücken trainieren können: das gleiche System, betreut über die App, Video-Feedback und persönliche Calls. Die erste Runde ist klein.</p>
+      </div>
+      <a class="btn btn-gold" href="#kontakt">Auf die Warteliste</a>
+    </div>
+  </div>
+</section>
+
+<section class="band" id="kontakt">
+  <div class="wrap contact">
+    <div class="sec-h" style="margin:0">
+      <p class="eyebrow">Kontakt</p>
+      <h2>Lass uns sprechen.</h2>
+      <p class="lead">Schreib mir kurz, was dein Ziel ist und wann du trainieren möchtest. Ich melde mich innerhalb von 24 Stunden.</p>
+      <p class="note">Training in Saarbrücken.</p>
+    </div>
+    <div class="ch">
+      <div class="ch-item"><div><small>WhatsApp</small><a href="https://wa.me/4915214539498" target="_blank" rel="noopener">Nachricht schreiben</a></div></div>
+      <div class="ch-item"><div><small>Telefon</small><output id="tel">0152 14539498</output></div><button class="copy-b" type="button" data-copy="0152 14539498">Kopieren</button></div>
+      <div class="ch-item"><div><small>E-Mail</small><output id="mail">sweat4rack@gmail.com</output></div><button class="copy-b" type="button" data-copy="sweat4rack@gmail.com">Kopieren</button></div>
+    </div>
+  </div>
+</section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="10 -110 2310 840" class="logo-mark" focusable="false" role="img" aria-label="SWEAT4"><path fill="#BE9B5C" d="M316.0 714.0Q230.0 714.0 150.0 693.0Q70.0 672.0 21.0 637.0L86.0 491.0Q133.0 522.0 195.0 541.0Q257.0 560.0 317.0 560.0Q378.0 560.0 404.5 544.0Q431.0 528.0 431.0 503.0Q431.0 479.0 409.5 465.0Q388.0 451.0 352.5 442.0Q317.0 433.0 274.5 424.0Q232.0 415.0 189.5 401.5Q147.0 388.0 111.5 365.0Q76.0 342.0 54.5 305.0Q33.0 268.0 33.0 213.0Q33.0 151.0 67.5 99.5Q102.0 48.0 170.5 17.0Q239.0 -14.0 343.0 -14.0Q411.0 -14.0 478.0 1.5Q545.0 17.0 597.0 47.0L536.0 194.0Q486.0 167.0 437.0 153.5Q388.0 140.0 342.0 140.0Q280.0 140.0 254.5 158.5Q229.0 177.0 229.0 203.0Q229.0 226.0 250.5 239.0Q272.0 252.0 307.5 261.0Q343.0 270.0 385.5 279.0Q428.0 288.0 470.0 301.5Q512.0 315.0 547.5 337.5Q583.0 360.0 604.5 396.5Q626.0 433.0 626.0 488.0Q626.0 549.0 592.0 600.5Q558.0 652.0 489.0 683.0Q420.0 714.0 316.0 714.0Z M890.0 700.0 663.0 0.0H867.0L1008.0 447.0L1156.0 0.0H1338.0L1480.0 452.0L1626.0 0.0H1815.0L1588.0 700.0H1376.0L1242.0 274.0L1102.0 700.0Z"/><path fill="#BE9B5C" transform="translate(1529.2,-284.8) scale(2.713)" d="M212.5,70 L247,70 L170,224 L286.3,224 L286.3,254 L136.3,254 L136.3,224 Z M194.2,226 C194.4,223.6 194.0,217.1 195.4,212.0 C196.7,206.8 198.8,201.1 202.5,195.0 C206.1,188.8 212.0,181.6 217.5,175.0 C223.0,168.3 230.7,161.3 235.5,155.0 C240.3,148.6 243.7,141.8 246.3,137.0 C248.8,132.1 249.8,127.8 250.6,126.0 C251.0,128.0 253.0,133.5 253.0,138.0 C253.0,142.5 252.1,147.1 250.6,153.0 C249.0,158.8 246.8,166.3 243.6,173.0 C240.3,179.6 235.3,186.6 231.0,193.0 C226.6,199.3 220.5,205.5 217.4,211.0 C214.2,216.5 213.1,223.5 212.3,226.0 Z M229.0,226 C229.7,224.0 230.3,218.1 233.2,214.0 C236.0,209.8 242.3,205.5 246.0,201.0 C249.6,196.5 253.0,191.6 255.3,187.0 C257.6,182.3 259.0,175.3 259.8,173.0 C260.6,174.6 263.4,179.0 264.6,183.0 C265.8,187.0 267.3,192.1 267.0,197.0 C266.6,201.8 264.0,207.1 262.6,212.0 C261.1,216.8 259.0,223.6 258.3,226.0 Z M163.3,257.5 H274.3 Q277.3,257.5 277.3,260.5 V264.5 Q277.3,267.5 274.3,267.5 H163.3 Q160.3,267.5 160.3,264.5 V260.5 Q160.3,257.5 163.3,257.5 Z M202.0,271 H244.0 Q245.5,271 245.5,272.5 V351.0 Q245.5,352.5 244.0,352.5 H202.0 Q200.5,352.5 200.5,351.0 V272.5 Q200.5,271 202.0,271 Z M184.3,352.5 H261.3 Q264.3,352.5 264.3,355.5 V360 Q264.3,363 261.3,363 H184.3 Q181.3,363 181.3,360 V355.5 Q181.3,352.5 184.3,352.5 Z"/></svg>
+    <nav aria-label="Rechtliches">
+      <button type="button" data-legal="impressum">Impressum</button>
+      <button type="button" data-legal="datenschutz">Datenschutz</button>
+      <a href="https://sweat4.github.io/sweat4/" target="_blank" rel="noopener">Zur App</a>
+    </nav>
+    <small>© 2026 Sweat4 · Khosro Talee</small>
+  </div>
+</footer>
+
+<section class="legal" id="impressum" hidden>
+  <div class="wrap">
+    <h2>Impressum</h2>
+    <p>Angaben gemäß § 5 DDG</p>
+    <p>Khosro Talee<br>Sweat4<br>Rotenbergstraße 32<br>66111 Saarbrücken</p>
+    <h3>Kontakt</h3>
+    <p>Telefon: 0152 14539498<br>E-Mail: sweat4rack@gmail.com</p>
+    <h3>Verantwortlich für den Inhalt</h3>
+    <p>Khosro Talee, Anschrift wie oben</p>
+    <h3>Verbraucherstreitbeilegung</h3>
+    <p>Ich bin nicht bereit und nicht verpflichtet, an Streitbeilegungsverfahren vor einer Verbraucherschlichtungsstelle teilzunehmen.</p>
+    <button class="btn btn-line close" type="button" data-close>Schließen</button>
+  </div>
+</section>
+
+<section class="legal" id="datenschutz" hidden>
+  <div class="wrap">
+    <h2>Datenschutz</h2>
+    <h3>Verantwortlicher</h3>
+    <p>Khosro Talee, Sweat4, Rotenbergstraße 32, 66111 Saarbrücken, sweat4rack@gmail.com, 0152 14539498</p>
+    <h3>Hosting</h3>
+    <p>Diese Website wird bei GitHub Pages (GitHub Inc., USA) gehostet. Beim Aufruf verarbeitet GitHub technisch notwendige Daten wie IP-Adresse, Zeitpunkt und aufgerufene Seite, um die Seite auszuliefern und abzusichern. Rechtsgrundlage ist Art. 6 Abs. 1 lit. f DSGVO. GitHub ist unter dem EU-US Data Privacy Framework zertifiziert.</p>
+    <h3>Keine Cookies, kein Tracking</h3>
+    <p>Diese Website setzt keine Cookies, nutzt keine Analyse-Werkzeuge und lädt keine Schriften oder Skripte von Drittanbietern.</p>
+    <h3>Kontaktaufnahme</h3>
+    <p>Wenn du mich per E-Mail, Telefon oder WhatsApp kontaktierst, verarbeite ich deine Angaben, um deine Anfrage zu beantworten (Art. 6 Abs. 1 lit. b DSGVO). Bei WhatsApp verarbeitet zusätzlich die WhatsApp Ireland Ltd. (Meta) Daten nach eigenen Bedingungen. Wenn du das nicht möchtest, nutze bitte E-Mail oder Telefon.</p>
+    <h3>Deine Rechte</h3>
+    <p>Du hast das Recht auf Auskunft, Berichtigung, Löschung, Einschränkung der Verarbeitung, Datenübertragbarkeit und Widerspruch. Du kannst dich außerdem beim Unabhängigen Datenschutzzentrum Saarland, Fritz-Dobisch-Straße 12, 66111 Saarbrücken, beschweren.</p>
+    <h3>Sweat4 App</h3>
+    <p>Für die App gilt eine eigene Datenschutzerklärung, die du in der App unter Daten → Rechtliches findest.</p>
+    <button class="btn btn-line close" type="button" data-close>Schließen</button>
+  </div>
+</section>
+
+<div class="toast" id="toast" hidden></div>
+
+<script>
+(function(){
+  var toast=document.getElementById('toast'),tt;
+  function say(t){toast.textContent=t;toast.hidden=false;clearTimeout(tt);tt=setTimeout(function(){toast.hidden=true},1800)}
+  document.querySelectorAll('[data-copy]').forEach(function(b){
+    b.addEventListener('click',function(){
+      var v=b.getAttribute('data-copy'),el=b.parentNode.querySelector('output');
+      function sel(){try{var r=document.createRange();r.selectNodeContents(el);var s=getSelection();s.removeAllRanges();s.addRange(r);say('Markiert, jetzt kopieren')}catch(e){}}
+      try{navigator.clipboard.writeText(v).then(function(){say('Kopiert')},sel)}catch(e){sel()}
+    });
+  });
+  function closeAll(){document.querySelectorAll('.legal').forEach(function(s){s.hidden=true})}
+  document.querySelectorAll('[data-legal]').forEach(function(b){
+    b.addEventListener('click',function(){closeAll();var s=document.getElementById(b.getAttribute('data-legal'));s.hidden=false;s.scrollIntoView({behavior:'smooth'})});
+  });
+  document.querySelectorAll('[data-close]').forEach(function(b){b.addEventListener('click',function(){closeAll();window.scrollTo({top:document.body.scrollHeight})})});
+  var h=(location.hash||'').slice(1);if(h==='impressum'||h==='datenschutz'){document.getElementById(h).hidden=false}
+})();
+</script>
+
+</body>
+</html>
