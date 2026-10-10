@@ -61,6 +61,18 @@ p{margin:0}
 .login-steps b{font-size:.98rem}
 .login-steps span{color:var(--text-2);font-size:.9rem}
 .ctas-row{display:flex;flex-wrap:wrap;gap:10px;margin-top:10px}
+.hero-visual{position:relative;min-width:0;padding-bottom:150px}
+.hero-photo{display:block;width:100%;height:auto;max-width:100%;aspect-ratio:3/4;object-fit:cover;object-position:50% 20%;border-radius:22px;border:1px solid rgba(199,164,106,.25);filter:contrast(1.05)}
+.hero-visual .panel{position:absolute;left:-28px;bottom:0;width:min(290px,72%);padding:16px}
+.hero-visual .panel .macro b{font-size:1.45rem}
+@media (max-width:900px){.hero-visual{max-width:460px;padding-bottom:0}.hero-visual .panel{position:relative;left:auto;bottom:auto;width:auto;margin:-56px 14px 0;padding:22px}.hero-photo{aspect-ratio:1/1;object-position:50% 40%}}
+.pt-head{display:grid;grid-template-columns:1.3fr .7fr;gap:40px;align-items:center;margin-bottom:40px}
+.pt-head .sec-h{margin-bottom:0}
+.pt-photo,.about-photo{margin:0;min-width:0}
+.pt-photo img,.about-photo img{display:block;width:100%;height:auto;max-width:100%;object-fit:cover;border-radius:18px}
+.pt-photo img{aspect-ratio:4/5;max-height:440px;object-position:50% 20%}
+.about-photo img{aspect-ratio:4/5;object-position:50% 25%}
+@media (max-width:800px){.pt-head{grid-template-columns:1fr}.pt-photo img{max-height:360px;aspect-ratio:auto;height:360px!important}}
 .toast{background:var(--gold-fill)!important;color:#111!important}
 .btn-ghost{border-color:rgba(243,236,225,.35);color:var(--on-esp)}
 .btn-ghost:hover{border-color:var(--gold-on-esp)}
@@ -94,7 +106,7 @@ p{margin:0}
 
 /* app panel in hero */
 .panel{background:var(--espresso-2);border:1px solid rgba(199,164,106,.25);border-radius:22px;padding:22px;box-shadow:0 30px 60px rgba(0,0,0,.35);min-width:0}
-.panel-h{display:flex;justify-content:space-between;align-items:baseline;gap:10px}
+.panel-h{display:flex;flex-wrap:wrap;justify-content:space-between;align-items:baseline;gap:4px 10px}
 .panel-h small{white-space:nowrap;font-size:.72rem;letter-spacing:.16em;text-transform:uppercase;color:var(--on-esp-2)}
 .panel-h strong{font:700 1.3rem/1.1 var(--display);text-transform:uppercase;letter-spacing:.03em}
 .phases{display:grid;grid-template-columns:repeat(3,1fr);gap:6px;margin-top:16px}
@@ -104,7 +116,7 @@ p{margin:0}
 .macro{background:rgba(243,236,225,.05);border-radius:12px;padding:12px 14px}
 .macro small{display:block;font-size:.72rem;color:var(--on-esp-2);letter-spacing:.06em}
 .macro b{font:700 1.7rem/1.1 var(--display);color:var(--on-esp);font-variant-numeric:tabular-nums}
-.macro em{font-style:normal;font-size:.78rem;color:var(--gold-on-esp);margin-left:4px}
+.macro em{display:block;font-style:normal;font-size:.76rem;color:var(--gold-on-esp);white-space:nowrap}
 .bar{height:6px;border-radius:6px;background:rgba(243,236,225,.08);margin-top:8px;overflow:hidden}
 .bar i{display:block;height:100%;background:var(--gold-on-esp);border-radius:6px}
 .panel-f{margin-top:14px;font-size:.78rem;color:var(--on-esp-2);display:flex;justify-content:space-between;gap:10px;flex-wrap:wrap}
@@ -191,7 +203,9 @@ td.v small{font:500 .78rem var(--body);color:var(--muted);margin-left:3px}
 @media (max-width:460px){.feat-list{grid-template-columns:1fr}}
 
 /* about */
-.about{display:grid;grid-template-columns:.9fr 1.1fr;gap:48px;align-items:start}
+.about{display:grid;grid-template-columns:.75fr 1.25fr;gap:40px 48px;align-items:center}
+.about .myth{grid-column:1/-1}
+@media (max-width:860px){.about-photo img{max-height:440px;aspect-ratio:auto;height:440px!important}}
 .about .copy{display:grid;gap:16px;color:var(--text-2)}
 .myth{border:1px solid var(--line);border-radius:var(--r);background:var(--surface);overflow:hidden}
 .myth div{display:grid;grid-template-columns:1fr 1fr;gap:16px;padding:16px 20px;border-bottom:1px solid var(--line)}
@@ -283,6 +297,8 @@ footer a:hover,footer button:hover{color:var(--on-esp)}
         <div><b>5+</b><span>selbst ausgebildete Trainer</span></div>
       </div>
     </div>
+    <div class="hero-visual">
+    <img class="hero-photo" src="img/khosro-portrait.jpg" alt="Khosro Talee, Personal Trainer und Gründer von Sweat4" width="900" height="1505" fetchpriority="high">
     <aside class="panel" aria-label="Beispiel aus der Sweat4 App">
       <div class="panel-h"><div><small>Beispiel · 80 kg</small><br><strong>Körperdefinition</strong></div><small>Woche 6 / 12</small></div>
       <div class="phases" aria-hidden="true"><i>Phase 1</i><i class="on">Phase 2</i><i>Phase 3</i></div>
@@ -294,6 +310,7 @@ footer a:hover,footer button:hover{color:var(--on-esp)}
       </div>
       <div class="panel-f"><span>≈ 2.030 kcal pro Tag</span><span>Neu berechnet bei jedem Check</span></div>
     </aside>
+    </div>
   </div>
 </section>
 
@@ -369,10 +386,13 @@ footer a:hover,footer button:hover{color:var(--on-esp)}
 
 <section class="band" id="training">
   <div class="wrap">
+    <div class="pt-head">
     <div class="sec-h">
       <p class="eyebrow">Personal Training 1:1</p>
       <h2>Dein Trainer. Dein Fokus.</h2>
       <p class="lead">Personal Training bei Sweat4 heißt volle Aufmerksamkeit auf dich, deinen Körper und deine Entwicklung: strukturiert, präzise und individuell. Wie oft du trainierst, entscheidest du.</p>
+    </div>
+    <figure class="pt-photo"><img src="img/khosro-training.jpg" alt="Khosro Talee beim Training" width="800" height="1224"></figure>
     </div>
     <ul class="philo">
       <li>Feste Termine statt Wartezeit an Geräten</li>
@@ -474,6 +494,7 @@ footer a:hover,footer button:hover{color:var(--on-esp)}
 
 <section class="band alt" id="ueber-mich">
   <div class="wrap about">
+    <figure class="about-photo"><img src="img/khosro-aktuell.jpg" alt="Khosro Talee, aktuelles Foto" width="800" height="1148"></figure>
     <div class="copy">
       <p class="eyebrow">Über mich</p>
       <h2>Khosro Talee</h2>
