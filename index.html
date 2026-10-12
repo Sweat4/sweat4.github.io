@@ -177,7 +177,8 @@ td.v small{font:500 .78rem var(--body);color:var(--muted);margin-left:3px}
 .price ul li{display:grid;grid-template-columns:16px 1fr;gap:8px}
 .price ul li::before{content:"✓";color:var(--gold);font-weight:700}
 .price .btn{margin-top:auto}
-@media (max-width:860px){.prices{grid-template-columns:1fr}}
+.prices.two{grid-template-columns:repeat(2,1fr);max-width:820px}
+@media (max-width:860px){.prices,.prices.two{grid-template-columns:1fr}}
 
 .sub-h{display:flex;flex-wrap:wrap;justify-content:space-between;align-items:end;gap:12px;margin:64px 0 22px}
 .sub-h h3{font-size:1.9rem}
@@ -484,34 +485,28 @@ footer a:hover,footer button:hover{color:var(--on-esp)}
     <div class="sec-h">
       <p class="eyebrow">Online-Betreuung · Start in Kürze</p>
       <h2>Sweat4 Bestform 12</h2>
-      <p class="lead">12 Wochen das komplette Sweat4 System, egal wo du trainierst: dein Plan und deine Ernährung in der App, jede Einheit wird erfasst, ich werte sie aus und steuere nach. Kein Plan zum Download, sondern Betreuung mit Kontrolle.</p>
+      <p class="lead">Dein Trainer für unterwegs: 12 Wochen das Sweat4 System, egal wo du trainierst. Dein Plan und deine Ernährung in der App, jede Einheit wird erfasst – und einmal im Monat schaue ich mir alles an und steuere nach.</p>
     </div>
-    <div class="prices">
+    <div class="prices two">
       <article class="price feat">
-        <span class="badge">Kleingruppe</span>
-        <h3>Small Group · max. 4</h3>
-        <div class="big">690 €<small>pro Person · 12 Wochen</small></div>
-        <p class="sum">rechnerisch <b>57,50 €</b> pro Woche · oder 3&nbsp;×&nbsp;230&nbsp;€</p>
-        <ul><li>Individueller Trainings- und Ernährungsplan</li><li>Gemeinsamer Start mit höchstens 3 anderen</li><li>Auswertung alle 2 Wochen, Kurz-Check jede Woche</li><li>Gruppencall 45 Min. alle 2 Wochen</li><li>Anpassung in Woche 4 und 8</li><li>Antwort innerhalb von 48 Std. werktags</li></ul>
+        <span class="badge">Gründerpreis 199 €</span>
+        <h3>Bestform 12</h3>
+        <div class="big">297 €<small>für 12 Wochen</small></div>
+        <p class="sum">rechnerisch <b>99 €</b> pro Monat · oder 3&nbsp;×&nbsp;99&nbsp;€</p>
+        <p class="sum">Gründerpreis <b>199 €</b> für die ersten 20 Kundinnen und Kunden</p>
+        <ul><li>Erstgespräch per Video (20 Min.)</li><li>Individueller Trainingsplan in der Sweat4 App</li><li>Ernährung mit Makros und Mahlzeiten-Baukasten</li><li>Jede Übung mit 3D-Ausführung</li><li>Einmal im Monat persönliches Feedback und Anpassung</li><li>Fragen per App-Nachricht, Antwort einmal pro Woche</li></ul>
         <a class="btn btn-gold" href="#kontakt">Erstgespräch vereinbaren</a>
       </article>
       <article class="price">
-        <span class="badge">Premium</span>
-        <h3>Individual · 1:1</h3>
-        <div class="big">1.190 €<small>für 12 Wochen</small></div>
-        <p class="sum">rechnerisch <b>99,17 €</b> pro Woche · oder 3&nbsp;×&nbsp;399&nbsp;€</p>
-        <ul><li>Individueller Trainings- und Ernährungsplan</li><li>Start jederzeit, Bewegungscheck per Video</li><li>Ausführliche Auswertung jede Woche</li><li>Technikvideo mit Korrektur jede Woche</li><li>3 Einzelcalls: Start, Woche 6, Woche 12</li><li>Antwort innerhalb von 24 Std. werktags</li></ul>
-        <a class="btn btn-line" href="#kontakt">Erstgespräch vereinbaren</a>
-      </article>
-      <article class="price">
-        <h3>Continue · danach</h3>
-        <div class="big">149 €<small>pro Monat</small></div>
-        <p class="sum">nach Bestform 12 · <b>monatlich kündbar</b></p>
-        <ul><li>Plan und Ernährung laufen weiter</li><li>Monatliche Auswertung</li><li>Anpassung alle 4 Wochen</li><li>1 Call pro Quartal</li><li>Antwort innerhalb von 48 Std. werktags</li></ul>
+        <h3>Phase 2 · danach</h3>
+        <div class="big">197 €<small>für 12 Wochen</small></div>
+        <p class="sum">nur nach Bestform 12 · <b>keine Laufzeit</b></p>
+        <ul><li>Neuer Plan auf Basis deiner Ergebnisse</li><li>Ernährung neu berechnet</li><li>Einmal im Monat persönliches Feedback</li><li>App-Zugang für weitere 12 Wochen</li></ul>
         <a class="btn btn-line" href="#kontakt">Anfragen</a>
       </article>
     </div>
-    <div class="sub-h"><h3>So startest du</h3><p>Fragebogen und Erstgespräch (20 Min., per Video) → Startcheck mit Maßen, Fotos und Bewegungsvideos → dein Plan in der App innerhalb von 48 Stunden → Start. Für Erwachsene, die 3× pro Woche trainieren können und Zugang zu einem Studio mit freien Gewichten haben.</p></div>
+    <p class="note">Mehr persönliche Betreuung? Dann ist <a href="#training">Personal Training vor Ort in Frankfurt</a> das Richtige.</p>
+    <div class="sub-h"><h3>So startest du</h3><p>Kurzfragebogen und Erstgespräch (20 Min., per Video) → dein Plan in der App innerhalb von 48 Stunden → Start. Einmal im Monat bekommst du von mir Feedback. Für Erwachsene, die 3× pro Woche trainieren können und Zugang zu einem Studio mit freien Gewichten haben.</p></div>
   </div>
 </section>
 
